@@ -12,9 +12,14 @@
   :root {
     --tarantinoYellow: #F9ED13;
     --offBlack: #11080E;
+    --blancheWhite:#F3F5E2;
     --PPNeueMontreal: "PPNeueMontreal-Book";
   }
 
   body {
-    @apply ml-[50.5px] mr-[50.5px] mt-2 bg-offBlack
+    @apply ml-[50.5px] mr-[50.5px] mt-2 bg-offBlack font-light
+  }
+
+  nav li {
+    @apply uppercase text-[35px] text-blancheWhite
   }
