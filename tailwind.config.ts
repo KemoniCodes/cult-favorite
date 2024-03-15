@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         tarantinoYellow: "var(--tarantinoYellow)",
-        offBlack: "var(--offBlack)"
+        offBlack: "var(--offBlack)",
+        blancheWhite: "var(--blancheWhite)"
       },
       fontFamily: {
         "PPNeueMontreal": "var(--PPNeueMontreal)"
