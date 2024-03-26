@@ -3,23 +3,62 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "PPNeueMontreal-Book";
-    src: url("../public/PPNeueMontreal-Book.otf");
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  :root {
-    --tarantinoYellow: #F9ED13;
-    --offBlack: #11080E;
-    --blancheWhite:#F3F5E2;
-    --PPNeueMontreal: "PPNeueMontreal-Book";
+  font-family: "PPNeueMontreal-Book";
+  src: url("../public/PPNeueMontreal-Book.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --tarantinoYellow: #f9ed13;
+  --offBlack: #11080e;
+  --blancheWhite: #f3f5e2;
+  --PPNeueMontreal: "PPNeueMontreal-Book";
+}
+
+body {
+  @apply ml-[50.5px] mr-[50.5px] mt-2 bg-offBlack font-light text-blancheWhite;
+}
+
+nav li {
+  @apply uppercase text-[18px] leading-tight;
+}
+
+.fixed-nav {
+  @apply fixed top-0 z-50 mr-[50.5px] mt-4 right-0 block;
+}
+
+html.yellowMode body {
+  @apply bg-tarantinoYellow;
+}
+
+html.yellowMode .homePageContainer > * {
+  @apply !text-offBlack
+}
+
+html.yellowMode .heroContainer h1 {
+  @apply !text-offBlack font-normal
+}
+
+.eyes {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: spin 1.8s linear infinite;
   }
 
-  body {
-    @apply ml-[50.5px] mr-[50.5px] mt-2 bg-offBlack font-light
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
   }
 
-  nav li {
-    @apply uppercase text-[35px] text-blancheWhite
+.eyesRight {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: spin 1.8s linear infinite;
   }
+
+  @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+  }
+/* h1 + h2 + h3 + h4 + h5 + li + a  */
