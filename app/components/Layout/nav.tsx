@@ -15,7 +15,7 @@ export default function Nav() {
             document.querySelector(".darkLogo")?.classList.add("block");
             document.querySelector(".darkLogo")?.classList.remove("hidden");
             document.querySelector(".logo")?.classList.add("hidden");
-            document.querySelectorAll("ul li")?.forEach((navLI) => {
+            document.querySelectorAll("li")?.forEach((navLI) => {
                 navLI?.classList.remove("transition-yellowLinkHover")
                 navLI?.classList.remove("hover:text-tarantinoYellow")
                 navLI?.classList.add("transition-darkLinkHover")
@@ -27,7 +27,7 @@ export default function Nav() {
             document.querySelector(".darkLogo")?.classList.remove("block");
             document.querySelector(".darkLogo")?.classList.add("hidden");
             document.querySelector(".logo")?.classList.remove("hidden");
-            document.querySelectorAll("ul li")?.forEach((navLI) => {
+            document.querySelectorAll("li")?.forEach((navLI) => {
                 navLI?.classList.remove("transition-darkLinkHover")
                 navLI?.classList.remove("hover:text-blancheWhite")
                 navLI?.classList.add("transition-yellowLinkHover")
