@@ -38,7 +38,7 @@ export default function Nav() {
     return (
         <>
             <nav className="">
-                <ul className="text-right z-10 relative flex justify-between">
+                <ul className="text-right z-10 relative flex justify-between items-start">
                     <button onClick={handleClick}>
                         {colorChange ? (
                             <BlackSmiley className="w-[58px] h-full ml-[100.5px]" />

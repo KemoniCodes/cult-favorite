@@ -77,3 +77,8 @@ html.yellowMode .heroContainer h1 {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(-360deg); }
   }
+
+
+  .services li {
+    @apply hover:cursor-default;
+  }
