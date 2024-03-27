@@ -16,6 +16,10 @@ const config: Config = {
       fontFamily: {
         "PPNeueMontreal": "var(--PPNeueMontreal)"
       },
+      transitionProperty: {
+        "yellowLinkHover": "var(--tarantinoYellow) 0.2s ease",
+        "darkLinkHover": "var(--blancheWhite) 0.2s ease",
+      }
     },
   },
   plugins: [],

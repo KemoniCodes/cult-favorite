@@ -37,7 +37,7 @@ h5 {
 }
 
 nav li {
-  @apply uppercase text-[18px] leading-tight;
+  @apply uppercase text-[18px] leading-tight hover:cursor-pointer;
 }
 
 .fixed-nav {

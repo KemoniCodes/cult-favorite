@@ -15,11 +15,24 @@ export default function Nav() {
             document.querySelector(".darkLogo")?.classList.add("block");
             document.querySelector(".darkLogo")?.classList.remove("hidden");
             document.querySelector(".logo")?.classList.add("hidden");
+            document.querySelectorAll("ul li")?.forEach((navLI) => {
+                navLI?.classList.remove("transition-yellowLinkHover")
+                navLI?.classList.remove("hover:text-tarantinoYellow")
+                navLI?.classList.add("transition-darkLinkHover")
+                navLI?.classList.add("hover:text-blancheWhite")
+            })
+
         } else {
             document.querySelector("html")?.classList.remove("yellowMode");
             document.querySelector(".darkLogo")?.classList.remove("block");
             document.querySelector(".darkLogo")?.classList.add("hidden");
             document.querySelector(".logo")?.classList.remove("hidden");
+            document.querySelectorAll("ul li")?.forEach((navLI) => {
+                navLI?.classList.remove("transition-darkLinkHover")
+                navLI?.classList.remove("hover:text-blancheWhite")
+                navLI?.classList.add("transition-yellowLinkHover")
+                navLI?.classList.add("hover:text-tarantinoYellow")
+            })
         }
     }, [colorChange]);
     return (
@@ -35,6 +48,7 @@ export default function Nav() {
                     </button>
 
                     <div className="navInfo block">
+                        <li>works</li>
                         <li>studio</li>
                         <li>contact</li>
                     </div>
