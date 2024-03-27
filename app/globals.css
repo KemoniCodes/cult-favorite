@@ -20,6 +20,22 @@ body {
   @apply ml-[50.5px] mr-[50.5px] mt-2 bg-offBlack font-light text-blancheWhite;
 }
 
+h2 {
+@apply uppercase text-[75px] leading-[73px];
+}
+
+h3,.h3 {
+  @apply uppercase text-[24px] leading-tight;
+}
+
+h4 {
+  @apply uppercase text-[14px];
+}
+
+h5 {
+  @apply uppercase text-[11px];
+}
+
 nav li {
   @apply uppercase text-[18px] leading-tight;
 }
@@ -61,4 +77,3 @@ html.yellowMode .heroContainer h1 {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(-360deg); }
   }
-/* h1 + h2 + h3 + h4 + h5 + li + a  */

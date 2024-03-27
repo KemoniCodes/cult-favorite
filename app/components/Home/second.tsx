@@ -70,16 +70,16 @@ export default function Second() {
             <div className="grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4 absolute bottom-0 left-0 h-screen">
                 <div className="imgContainer col-span-3 row-start-2">
                     <Image className="w-full" src={Img1} height={353} width={561} alt="image 1" />
-                    <h5 className="uppercase text-[11px] pt-[.1rem]">jouir de</h5>
+                    <h5 className="pt-[.1rem]">jouir de</h5>
                 </div>
                 <div className="gifContainer col-span-2 col-start-6 row-start-2">
                     <Image className="w-full" src={Gif1} height={520} width={368} alt="gif 1" />
-                    <h5 className="uppercase text-[11px] pt-[.1rem] ">ceramica</h5>
+                    <h5 className="pt-[.1rem] ">ceramica</h5>
                 </div>
 
-                <h3 className="uppercase text-[75px] leading-[73px] text-left col-span-4 row-end-7">
+                <h2 className="text-left col-span-4 row-end-7">
                     LOS ANGELES－BASED DESIGNER & CREATIVE DEVELOPER.
-                </h3>
+                </h2>
             </div>
         </div>
     );
