@@ -11,15 +11,26 @@ export type WorksType = {
   _id: string;
   worksHeader: string;
   worksSubHeader: string;
+  techTitle: string;
+  frontendTechTitle: string;
+  backendTechTitle: string;
+  animationTechTitle: string;
   projects: [
     {
       projectTitle: string;
+      projectYear: string;
+      projectDescription: string;
+      projectWebsite: string;
+      frontendTech: [string];
+      backendTech: [string];
+      animationTech: [string];
       thumbnail: string | { asset: { url: string } };
       thumbnailAlt: string;
       slug: {
         current: string;
       };
       deliverables: [string];
+
       images: [
         {
           image: string;

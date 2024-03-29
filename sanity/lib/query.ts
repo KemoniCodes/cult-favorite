@@ -13,17 +13,27 @@ export async function getServices() {
 }
 
 export async function getAllWorks() {
-    return client.fetch(
-      groq`*[_type == "works"]{
+  return client.fetch(
+    groq`*[_type == "works"]{
         _id,
         worksHeader,
         worksSubHeader,
+        techTitle,
+        frontendTechTitle,
+        backendTechTitle,
+        animationTechTitle,
         projects[]{
           _key,
           projectTitle,
           slug {
             current
           },
+          projectYear,
+          projectDescription,
+          projectWebsite,
+          frontendTech[],
+          backendTech[],
+          animationTech[],
           deliverables[],
           thumbnail {
             asset-> {
@@ -35,12 +45,12 @@ export async function getAllWorks() {
           "imageAlts": images[].alt
         }
       }`
-    );
-  }
+  );
+}
 
 export async function getWorksBySlug(slug: string) {
-    return client.fetch(
-      groq`*[_type == "works" && slug.current == $slug][0]]{
+  return client.fetch(
+    groq`*[_type == "works" && slug.current == $slug][0]]{
         _id,
         worksHeader,
         worksSubHeader,
@@ -50,9 +60,6 @@ export async function getWorksBySlug(slug: string) {
         "imageAlts": projects[].images[].alt,
         "slug": projects[].slug.current
       }`,
-      {slug}
-    );
-  }
-
-
-  
+    { slug }
+  );
+}
