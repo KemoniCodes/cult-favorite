@@ -2,6 +2,9 @@ import React, { use, useEffect, useState } from "react"
 import Image from "next/image"
 import YellowSmiley from '../../../public/yellowSmiley.svg'
 import BlackSmiley from '../../../public/blackSmiley.svg'
+import BlackSubmark from '../../../public/blackSubmark.svg'
+import YellowSubmark from '../../../public/yellowSubmark.svg'
+import Link from "next/link"
 
 
 export default function Nav() {
@@ -52,6 +55,19 @@ export default function Nav() {
                             <YellowSmiley className="w-[58px] h-full ml-[100.5px]" />
                         )}
                     </button>
+
+                    <div className="logo">
+                        {colorChange ? (
+                            <Link href={'/'}>
+                                <BlackSubmark />
+                            </Link>
+
+                        ) : (
+                            <Link href={'/'}>
+                                <YellowSubmark />
+                            </Link>
+                        )}
+                    </div>
 
                     <div className="navInfo block">
                         <li>works</li>
