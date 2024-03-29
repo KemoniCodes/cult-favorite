@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { WorksType } from "@/sanity/types";
 import { getAllWorks } from "@/sanity/lib/query";
+import Link from "next/link";
 // import { getWorksBySlug } from "@/sanity/lib/query";
 
 
@@ -26,7 +27,7 @@ export default function WorksGrid() {
     return (
         // relative top-[16rem]
         <WorksContext.Provider value={works}>
-            <div className="works grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4 mt-8 pt-2">
+            <div className="works grid grid-cols-7 gap-x-5 gap-y-4 mt-8 pt-2 pb-16">
                 <div className="titles block">
                     <h3>{works?.worksHeader}</h3>
                     <h4>{works?.worksSubHeader}</h4>
@@ -36,6 +37,7 @@ export default function WorksGrid() {
                         console.log(project),
                         <>
                             <div className="flex flex-col first:flex-grow-[3]">
+                                <Link href={project.slug.current}>
                                 <Image
                                     src={typeof project.thumbnail === "string"
                                         ? project.thumbnail
@@ -60,6 +62,8 @@ export default function WorksGrid() {
                                         </h4>
                                     ))}
                                 </div>
+                                </Link>
+
                             </div>
                         </>
                         // col-span-3 row-span-3

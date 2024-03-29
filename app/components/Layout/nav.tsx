@@ -12,7 +12,7 @@ export default function Nav() {
         setColorChange(!colorChange);
     };
     useEffect(() => {
-        
+
         if (colorChange) {
             document.querySelector("html")?.classList.add("yellowMode");
             document.querySelector("html")?.classList?.add("black-star-cursor");
@@ -20,12 +20,11 @@ export default function Nav() {
             document.querySelector(".darkLogo")?.classList.add("block");
             document.querySelector(".darkLogo")?.classList.remove("hidden");
             document.querySelector(".logo")?.classList.add("hidden");
-            document.querySelectorAll("li")?.forEach((navLI) => {
-                navLI?.classList.remove("transition-yellowLinkHover")
-                navLI?.classList.remove("hover:text-tarantinoYellow")
-                navLI?.classList.add("transition-darkLinkHover")
-                navLI?.classList.add("hover:text-blancheWhite")
-
+            document.querySelectorAll("a,li")?.forEach((link) => {
+                link?.classList.remove("transition-yellowLinkHover")
+                link?.classList.remove("hover:text-tarantinoYellow")
+                link?.classList.add("transition-darkLinkHover")
+                link?.classList.add("hover:text-blancheWhite")
             })
 
         } else {
@@ -35,11 +34,11 @@ export default function Nav() {
             document.querySelector(".darkLogo")?.classList.remove("block");
             document.querySelector(".darkLogo")?.classList.add("hidden");
             document.querySelector(".logo")?.classList.remove("hidden");
-            document.querySelectorAll("li")?.forEach((navLI) => {
-                navLI?.classList.remove("transition-darkLinkHover")
-                navLI?.classList.remove("hover:text-blancheWhite")
-                navLI?.classList.add("transition-yellowLinkHover")
-                navLI?.classList.add("hover:text-tarantinoYellow")
+            document.querySelectorAll("a,li")?.forEach((link) => {
+                link?.classList.remove("transition-darkLinkHover")
+                link?.classList.remove("hover:text-blancheWhite")
+                link?.classList.add("transition-yellowLinkHover")
+                link?.classList.add("hover:text-tarantinoYellow")
             })
         }
     }, [colorChange]);

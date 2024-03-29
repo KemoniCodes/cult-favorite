@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: "PPNeueMontreal-Book";
   src: url("../public/PPNeueMontreal-Book.otf");
@@ -18,15 +17,15 @@
 }
 
 .black-star-cursor {
-  cursor: url('/blackStar.svg'), auto;
+  cursor: url("/blackStar.svg"), auto;
 }
 
 .yellow-star-cursor {
-  cursor: url('/yellowStar.svg'), auto;
+  cursor: url("/yellowStar.svg"), auto;
 }
 
 html {
-  cursor: url('/yellowStar.svg'), auto 
+  cursor: url("/yellowStar.svg"), auto;
 }
 
 body {
@@ -34,10 +33,11 @@ body {
 }
 
 h2 {
-@apply uppercase text-[75px] leading-[73px];
+  @apply uppercase text-[75px] leading-[73px];
 }
 
-h3,.h3 {
+h3,
+.h3 {
   @apply uppercase text-[24px] leading-tight;
 }
 
@@ -57,49 +57,62 @@ nav li {
   @apply fixed top-0 z-50 mr-[50.5px] mt-4 right-0 block;
 }
 
+a,
+li {
+  @apply transition-yellowLinkHover hover:text-tarantinoYellow;
+}
+
 html.yellowMode body {
   @apply bg-tarantinoYellow;
 }
 
 html.yellowMode .homePageContainer > * {
-  @apply !text-offBlack
+  @apply !text-offBlack;
 }
 
 html.yellowMode .heroContainer h1 {
-  @apply !text-offBlack font-normal
+  @apply !text-offBlack font-normal;
 }
 
 .eyes {
   transform-box: fill-box;
   transform-origin: 50% 50%;
   animation: spin 1.8s linear infinite;
-  }
+}
 
-  @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 .eyesRight {
   transform-box: fill-box;
   transform-origin: 50% 50%;
   animation: spin 1.8s linear infinite;
-  }
-
-  @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(-360deg); }
-  }
-
-img,svg {
-  image-rendering: pixelated;
-
 }
 
-  .services li {
-    @apply hover:cursor-default;
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 
-  .works .list div:nth-child(4) {
-    @apply flex-grow-[3];
-  }
+img,
+svg {
+  image-rendering: pixelated;
+}
+
+.services li {
+  @apply hover:cursor-default;
+}
+
+.works .list div:nth-child(4) {
+  @apply flex-grow-[3];
+}
