@@ -5,3 +5,27 @@ export type ServicesType = {
   servicesSubHeader: string;
   servicesList: [string];
 };
+
+export type WorksType = {
+  [x: string]: any;
+  _id: string;
+  worksHeader: string;
+  worksSubHeader: string;
+  projects: [
+    {
+      projectTitle: string;
+      thumbnail: string;
+      thumbnailAlt: string;
+      slug: {
+        current: string;
+      };
+      deliverables: [string];
+      images: [
+        {
+          image: string;
+          alt: string;
+        }
+      ];
+    }
+  ];
+};

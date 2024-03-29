@@ -19,7 +19,13 @@ const config: Config = {
       transitionProperty: {
         "yellowLinkHover": "var(--tarantinoYellow) 0.2s ease",
         "darkLinkHover": "var(--blancheWhite) 0.2s ease",
-      }
+        'filterHover': 'filter 0.2s ease',
+        'radiusHover': 'border-radius 2s ease'
+      },
+      filter: {
+        'grayscale-0': 'grayscale(0%)',
+      },
+      
     },
   },
   plugins: [],

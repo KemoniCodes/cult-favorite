@@ -2,6 +2,8 @@ import React, { use, useEffect, useState } from "react"
 import Image from "next/image"
 import YellowSmiley from '../../../public/yellowSmiley.svg'
 import BlackSmiley from '../../../public/blackSmiley.svg'
+import YellowStar from '../../../public/yellowStar.svg'
+import BlackStar from '../../../public/blackStar.svg'
 
 export default function Nav() {
     const [colorChange, setColorChange] = useState(false)
@@ -10,8 +12,11 @@ export default function Nav() {
         setColorChange(!colorChange);
     };
     useEffect(() => {
+        
         if (colorChange) {
             document.querySelector("html")?.classList.add("yellowMode");
+            document.querySelector("html")?.classList?.add("black-star-cursor");
+            document.querySelector("html")?.classList?.remove("yellow-star-cursor");
             document.querySelector(".darkLogo")?.classList.add("block");
             document.querySelector(".darkLogo")?.classList.remove("hidden");
             document.querySelector(".logo")?.classList.add("hidden");
@@ -20,10 +25,13 @@ export default function Nav() {
                 navLI?.classList.remove("hover:text-tarantinoYellow")
                 navLI?.classList.add("transition-darkLinkHover")
                 navLI?.classList.add("hover:text-blancheWhite")
+
             })
 
         } else {
             document.querySelector("html")?.classList.remove("yellowMode");
+            document.querySelector("html")?.classList?.remove("black-star-cursor");
+            document.querySelector("html")?.classList?.add("yellow-star-cursor");
             document.querySelector(".darkLogo")?.classList.remove("block");
             document.querySelector(".darkLogo")?.classList.add("hidden");
             document.querySelector(".logo")?.classList.remove("hidden");

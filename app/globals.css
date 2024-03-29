@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: "PPNeueMontreal-Book";
   src: url("../public/PPNeueMontreal-Book.otf");
@@ -14,6 +15,18 @@
   --offBlack: #11080e;
   --blancheWhite: #f3f5e2;
   --PPNeueMontreal: "PPNeueMontreal-Book";
+}
+
+.black-star-cursor {
+  cursor: url('/blackStar.svg'), auto;
+}
+
+.yellow-star-cursor {
+  cursor: url('/yellowStar.svg'), auto;
+}
+
+html {
+  cursor: url('/yellowStar.svg'), auto 
 }
 
 body {
@@ -78,7 +91,15 @@ html.yellowMode .heroContainer h1 {
   100% { transform: rotate(-360deg); }
   }
 
+img,svg {
+  image-rendering: pixelated;
+
+}
 
   .services li {
     @apply hover:cursor-default;
+  }
+
+  .works .list div:nth-child(4) {
+    @apply flex-grow-[3];
   }
