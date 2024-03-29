@@ -14,7 +14,7 @@ export type WorksType = {
   projects: [
     {
       projectTitle: string;
-      thumbnail: string;
+      thumbnail: string | { asset: { url: string } };
       thumbnailAlt: string;
       slug: {
         current: string;

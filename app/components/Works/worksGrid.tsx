@@ -33,11 +33,13 @@ export default function WorksGrid() {
                 </div>
                 <div className="list col-start-3 col-span-5 grid-cols-3 gap-x-5 gap-y-6 flex justify-between flex-wrap">
                     {works?.projects.map((project, index) => (
-                        // console.log(project),
+                        console.log(project),
                         <>
                             <div className="flex flex-col first:flex-grow-[3]">
                                 <Image
-                                    src={`${project.thumbnail.asset.url}`}
+                                    src={typeof project.thumbnail === "string"
+                                        ? project.thumbnail
+                                        : project.thumbnail.asset.url}
                                     height={373}
                                     width={362}
                                     alt={project.thumbnailAlt}
@@ -45,6 +47,7 @@ export default function WorksGrid() {
                                   ease-in-out
                                 duration-[240ms]	
                                 hover:rounded-[4rem]
+
                                 "
                                 />
                                 <h3 className="pt-[.28rem] ">
