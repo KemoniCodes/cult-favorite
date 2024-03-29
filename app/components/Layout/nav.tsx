@@ -2,8 +2,7 @@ import React, { use, useEffect, useState } from "react"
 import Image from "next/image"
 import YellowSmiley from '../../../public/yellowSmiley.svg'
 import BlackSmiley from '../../../public/blackSmiley.svg'
-import YellowStar from '../../../public/yellowStar.svg'
-import BlackStar from '../../../public/blackStar.svg'
+
 
 export default function Nav() {
     const [colorChange, setColorChange] = useState(false)
