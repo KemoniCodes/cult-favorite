@@ -54,7 +54,7 @@ nav li {
 }
 
 .fixed-nav {
-  @apply fixed top-0 z-50 mr-[50.5px] mt-4 right-0 block;
+  @apply fixed top-0 z-50 px-[50.5px] mt-4 right-0 left-0 block;
 }
 
 a,

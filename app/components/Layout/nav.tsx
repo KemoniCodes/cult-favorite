@@ -50,9 +50,9 @@ export default function Nav() {
                 <ul className="text-right z-10 relative flex justify-between items-start">
                     <button onClick={handleClick}>
                         {colorChange ? (
-                            <BlackSmiley className="w-[58px] h-full ml-[100.5px]" />
+                            <BlackSmiley className="w-[58px] h-full " />
                         ) : (
-                            <YellowSmiley className="w-[58px] h-full ml-[100.5px]" />
+                            <YellowSmiley className="w-[58px] h-full " />
                         )}
                     </button>
 

@@ -30,7 +30,6 @@ export type WorksType = {
         current: string;
       };
       deliverables: [string];
-
       images: [
         {
           image: string;
