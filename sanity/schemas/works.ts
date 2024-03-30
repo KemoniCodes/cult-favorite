@@ -35,6 +35,11 @@ const works = {
       type: "string",
       title: "Animation Tech Title",
     }),
+    defineField({
+      name: "deliverablesTechTitle",
+      type: "string",
+      title: "Deliverables Tech Title",
+    }),
     {
       name: "projects",
       title: "Projects",

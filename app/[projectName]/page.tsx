@@ -1,49 +1,105 @@
 "use client"
-import React, { useState, useEffect } from "react"
-import { usePathname, useRouter } from 'next/navigation';
-import { WorksType } from "@/sanity/types"
-import { getWorkBySlug } from "@/sanity/lib/query"
-import Image from "next/image"
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from 'next/navigation';
+import { WorksType } from "@/sanity/types";
+import { getWorkBySlug } from "@/sanity/lib/query";
 import Nav from "../components/Layout/nav";
-
 
 export default function ProjectPage() {
     const router = usePathname();
-    const slug  = router.replace(/^\/|\/$/g, ''); // Assuming the slug is provided as a query parameter
-    // console.log(slug)
+    const slug = router.replace(/^\/|\/$/g, ''); // Assuming the slug is provided as a query parameter
 
     const [project, setProject] = useState<WorksType | null>(null);
 
     useEffect(() => {
         const fetchProject = async () => {
-            console.log("Slug:", slug);
             if (slug) {
                 const data = await getWorkBySlug(slug);
-                console.log("Fetched Data:", data); 
                 setProject(data[0]);
             }
         };
         fetchProject();
     }, [slug]);
-    console.log(project)
+
+    const work = project?.projects[0];
 
     return (
-
         <>
-        <Nav/>
-            <div className="projectPageContainer">
-            <div className="project grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4 mt-8 pt-2 relative top-[16rem]">
-                    <div className="titles block">
-                        <h3>{project?.projects[0].projectTitle}</h3>
-                        <h4>{project?.projects[0].projectYear}</h4>
+            {project && (
+                <div className="projectPageContainer">
+            <Nav />
+                    
+                    <div className="project grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative ">
+                        <div className="titles block row-start-2">
+                            {work?.projectTitle && <h3>{work.projectTitle}</h3>}
+                            {work?.projectYear && <h4>{work.projectYear}</h4>}
+                        </div>
+                        <div className="info row-start-2 col-start-3 col-span-4">
+                            {work?.projectDescription && <h3>{work.projectDescription}</h3>}
+                        </div>
+                        {work && work.animationTech != null && work.backendTech != null && work.frontendTech != null && (
+                            <>
+                                <div className="titles block row-start-3">
+                                    {project?.techTitle && <h3>{project.techTitle}</h3>}
+                                </div>
+                                <div className="info row-start-3 col-start-3 col-span-4 flex justify-between">
+                                    <ul className="">
+                                        {project?.frontendTechTitle && <li className="h3">{project.frontendTechTitle}:</li>}
+                                        {work?.frontendTech && work.frontendTech.map((w, index) => <li className="h3" key={index}>{w}</li>)}
+                                    </ul>
+                                    <ul className="">
+                                        <li className="h3">{project?.backendTechTitle && project.backendTechTitle}:</li>
+                                        {work?.backendTech && work.backendTech.map((w, index) => <li className="h3" key={index}>{w}</li>)}
+                                    </ul>
+                                    <ul className="">
+                                        <li className="h3">{project?.animationTechTitle && project.animationTechTitle}:</li>
+                                        {work?.animationTech && work.animationTech.map((w, index) => <li className="h3" key={index}>{w}</li>)}
+                                    </ul>
+                                </div>
+                            </>
+                        )}
+                        <div className={`titles block ${work?.animationTech == null && work?.backendTech == null && work?.frontendTech == null ? 'row-start-3' : 'row-start-4'}`}>
+                            <h3>{project?.deliverablesTechTitle && project.deliverablesTechTitle}</h3>
+                        </div>
+                        <div className={`info  col-start-3 col-span-4 ${work?.animationTech == null && work?.backendTech == null && work?.frontendTech == null ? 'row-start-3' : 'row-start-4'}`}>
+                            {work?.deliverables && work.deliverables.map((d, index) => <li className="h3 list-none" key={index}>{d}</li>)}
+                        </div>
+                        {work && work.projectWebsite != null && (
+                            <>
+                                <div className="titles block row-start-5">
+                                    <h3>website</h3>
+                                </div>
+                                <div className="info row-start-5 col-start-3 col-span-4">
+                                    <Link href={`${work.projectWebsite}`} target='_blank' className="h3 underline">live site</Link>
+                                </div>
+                            </>
+                        )}
                     </div>
-                    <div className="list col-start-3 col-span-4">
-                        <ul className="flex justify-between">
-                          
-                        </ul>
+                    <div className="imagesGrid mt-32 grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4">
+                        {work?.thumbnail && (
+                            <Image
+                                src={typeof work.thumbnail === "string" ? work.thumbnail : work.thumbnail.asset.url}
+                                height={373}
+                                width={362}
+                                alt={`${work.thumbnailAlt}`}
+                                className="h-fit w-full col-span-3"
+                            />
+                        )}
+                        {work?.images && work.images.map((img, index) => (
+                            <Image
+                                key={index}
+                                src={`${img}`}
+                                height={373}
+                                width={362}
+                                alt={img.alt}
+                                className="h-fit w-full col-span-3 last:col-span-3 last:col-start-5"
+                            />
+                        ))}
                     </div>
                 </div>
-            </div>
+            )}
         </>
-    )
+    );
 }

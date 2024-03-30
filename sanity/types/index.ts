@@ -15,6 +15,7 @@ export type WorksType = {
   frontendTechTitle: string;
   backendTechTitle: string;
   animationTechTitle: string;
+  deliverablesTechTitle: string;
   projects: [
     {
       projectTitle: string;

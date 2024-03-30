@@ -54,8 +54,9 @@ nav li {
 }
 
 .fixed-nav {
-  @apply fixed top-0 z-50 px-[50.5px] mt-4 right-0 left-0 block;
+  @apply fixed top-0 z-50 px-[50.5px] right-0 left-0 block;
 }
+/* mt-4 */
 
 a,
 li {
@@ -67,6 +68,10 @@ html.yellowMode body {
 }
 
 html.yellowMode .homePageContainer > * {
+  @apply !text-offBlack;
+}
+
+html.yellowMode .projectPageContainer > * {
   @apply !text-offBlack;
 }
 

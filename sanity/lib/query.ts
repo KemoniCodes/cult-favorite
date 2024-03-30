@@ -54,6 +54,7 @@ export async function getWorkBySlug(slug: string) {
       frontendTechTitle,
       backendTechTitle,
       animationTechTitle,
+      deliverablesTechTitle,
       projects[slug.current == $slug] {
         _key,
         projectTitle,

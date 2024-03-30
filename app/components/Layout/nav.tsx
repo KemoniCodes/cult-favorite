@@ -14,14 +14,13 @@ export default function Nav() {
         setColorChange(!colorChange);
     };
     useEffect(() => {
-
         if (colorChange) {
             document.querySelector("html")?.classList.add("yellowMode");
             document.querySelector("html")?.classList?.add("black-star-cursor");
             document.querySelector("html")?.classList?.remove("yellow-star-cursor");
             document.querySelector(".darkLogo")?.classList.add("block");
             document.querySelector(".darkLogo")?.classList.remove("hidden");
-            document.querySelector(".logo")?.classList.add("hidden");
+            // document.querySelector(".logo")?.classList.add("hidden");
             document.querySelectorAll("a,li")?.forEach((link) => {
                 link?.classList.remove("transition-yellowLinkHover")
                 link?.classList.remove("hover:text-tarantinoYellow")
@@ -46,7 +45,7 @@ export default function Nav() {
     }, [colorChange]);
     return (
         <>
-            <nav className="">
+            <nav className="mt-4">
                 <ul className="text-right z-10 relative flex justify-between items-start">
                     <button onClick={handleClick}>
                         {colorChange ? (
