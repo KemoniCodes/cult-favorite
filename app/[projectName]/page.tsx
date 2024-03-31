@@ -9,7 +9,7 @@ import Nav from "../components/Layout/nav";
 
 export default function ProjectPage() {
     const router = usePathname();
-    const slug = router.replace(/^\/|\/$/g, ''); // Assuming the slug is provided as a query parameter
+    const slug = router.replace(/^\/|\/$/g, '');
 
     const [project, setProject] = useState<WorksType | null>(null);
 
@@ -21,16 +21,25 @@ export default function ProjectPage() {
             }
         };
         fetchProject();
-    }, [slug]);
+    }, [slug, project]);
+
+    if (!project) {
+        return (
+            <h3>Loading...</h3>
+        )
+    }
 
     const work = project?.projects[0];
+
 
     return (
         <>
             {project && (
-                <div className="projectPageContainer">
-            <Nav />
-                    
+                <div className="projectPageContainer pb-16">
+                    <div className=" fixed top-0 left-0 right-0 mx-[50.5px] z-50" >
+                        <Nav />
+                    </div>
+
                     <div className="project grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative ">
                         <div className="titles block row-start-2">
                             {work?.projectTitle && <h3>{work.projectTitle}</h3>}
@@ -77,7 +86,8 @@ export default function ProjectPage() {
                             </>
                         )}
                     </div>
-                    <div className="imagesGrid mt-32 grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4">
+                    <div className="imagesGrid mt-32 grid grid-cols-7  gap-x-5 gap-y-4 grid-flow-row">
+                        {/* grid-rows-4 */}
                         {work?.thumbnail && (
                             <Image
                                 src={typeof work.thumbnail === "string" ? work.thumbnail : work.thumbnail.asset.url}
@@ -87,13 +97,15 @@ export default function ProjectPage() {
                                 className="h-fit w-full col-span-3"
                             />
                         )}
+
                         {work?.images && work.images.map((img, index) => (
+                            console.log(img),
                             <Image
                                 key={index}
                                 src={`${img}`}
                                 height={373}
                                 width={362}
-                                alt={img.alt}
+                                alt={`${work.imageAlts && work.imageAlts[index] ? work.imageAlts[index] : 'Default Alt Text'}`}
                                 className="h-fit w-full col-span-3 last:col-span-3 last:col-start-5"
                             />
                         ))}

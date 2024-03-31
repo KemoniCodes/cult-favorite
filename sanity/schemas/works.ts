@@ -140,7 +140,7 @@ const works = {
                   },
                   fields: [
                     {
-                      name: "alt",
+                      name: "imageAlts",
                       type: "string",
                       title: "Alt",
                     },

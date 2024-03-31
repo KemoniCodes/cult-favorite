@@ -18,6 +18,7 @@ export type WorksType = {
   deliverablesTechTitle: string;
   projects: [
     {
+      [x: string]: any;
       projectTitle: string;
       projectYear: string;
       projectDescription: string;
@@ -34,7 +35,7 @@ export type WorksType = {
       images: [
         {
           image: string;
-          alt: string;
+          imageAlts: string;
         }
       ];
     }
