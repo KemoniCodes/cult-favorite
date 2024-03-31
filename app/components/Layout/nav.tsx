@@ -10,9 +10,20 @@ import Link from "next/link"
 export default function Nav() {
     const [colorChange, setColorChange] = useState(false)
 
+    const handleScrollToWorks = () => {
+        const worksElement = document.querySelector(".works");
+        if (worksElement) {
+            worksElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    };
+
     const handleClick = () => {
         setColorChange(!colorChange);
     };
+
     useEffect(() => {
         if (colorChange) {
             document.querySelector("html")?.classList.add("yellowMode");
@@ -69,7 +80,9 @@ export default function Nav() {
                     </div>
 
                     <div className="navInfo block">
-                        <li>works</li>
+                        <button onClick={handleScrollToWorks}>
+                            <li >works</li>
+                        </button>
                         <li>studio</li>
                         <li>contact</li>
                     </div>
