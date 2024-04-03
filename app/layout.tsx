@@ -23,10 +23,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <Nav/> */}
-        <SpeedInsights/>
-        <Analytics/>
         <SmoothScrolling>
           {children}
+          <SpeedInsights/>
+          <Analytics/>
         </SmoothScrolling>
       </body>
     </html>
