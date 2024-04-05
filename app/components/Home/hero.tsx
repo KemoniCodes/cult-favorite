@@ -49,7 +49,7 @@ export default function Hero() {
                         ease: "easeIn",
                         duration: .15
                     }}
-                    animate={{ y: 0, opacity: 1 }} className="tagLine uppercase text-[18px] text-tarantinoYellow text-center">AN INDEPENDENT DESIGN  STUDIO FOR AUTHENTIC  BRANDS LIVING IN THE CHAOTIC GOOD.</motion.h1>
+                    animate={{ y: 0, opacity: 1 }} className="tagLine uppercase text-[18px] text-tarantinoYellow text-center">🚧 UNDER CONSTRUCTION 🚧</motion.h1>
                 <motion.div
                 initial={{ opacity: 0 }}
                 // style={{ y: 1400 }} 
@@ -60,7 +60,7 @@ export default function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 >
                     <Logo className="logo w-auto h-auto absolute bottom-0 pb-2"/>
-                    <DarkLogo className="darkLogo w-auto h-auto absolute bottom-0 pb-2"/>
+                    {/* <DarkLogo className="darkLogo w-auto h-auto absolute bottom-0 pb-2"/> */}
                     {/* <Image className="logo w-auto h-auto absolute bottom-0 pb-2" src={Logo} height={100} width={100} alt="CULT(FAVORITE) Logo" />
                     <Image className="darkLogo w-auto h-auto absolute bottom-0 pb-2 hidden" src={DarkLogo} height={100} width={100} alt="CULT(FAVORITE) Logo" /> */}
                 </motion.div>
