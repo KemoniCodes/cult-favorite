@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef } from "react";
+import { useInView } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nav from "../Layout/nav";
@@ -22,12 +23,11 @@ const debounce = (func: Function, delay: number) => {
 export default function Second() {
     const navRef = useRef<HTMLDivElement | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
-
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
 
     useEffect(() => {
         const nav = navRef.current!;
-        const container = containerRef.current!;
-
 
         const toggleNavFixed = () => {
             if (window.scrollY > nav?.offsetTop) {
@@ -68,16 +68,28 @@ export default function Second() {
                 <Nav />
             </div>
             <div className="grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4 absolute bottom-0 left-0 h-screen">
-                <div className="imgContainer col-span-3 row-start-2">
+                <div className="imgContainer col-span-3 row-start-2" ref={ref} style={{
+                    transform: isInView ? "none" : "translateX(-200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                }}>
                     <Image className="w-full" src={Img1} height={353} width={561} alt="image 1" />
                     <h5 className="pt-[.1rem]">jouir de</h5>
                 </div>
-                <div className="gifContainer col-span-2 col-start-6 row-start-2">
+                <div className="gifContainer col-span-2 col-start-6 row-start-2" ref={ref} style={{
+                    transform: isInView ? "none" : "translateX(200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                }}>
                     <Image className="w-full" src={Gif1} height={520} width={368} alt="gif 1" />
                     <h5 className="pt-[.1rem] ">ceramica</h5>
                 </div>
 
-                <h2 className="text-left col-span-4 row-end-7">
+                <h2 className="text-left col-span-4 row-end-7" ref={ref} style={{
+                    transform: isInView ? "none" : "translateY(200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                }}>
                     LOS ANGELES－BASED DESIGNER & CREATIVE DEVELOPER.
                 </h2>
             </div>
