@@ -59,7 +59,7 @@ export default function Hero() {
                 }}
                 animate={{ y: 0, opacity: 1 }}
                 >
-                    <Logo className="logo w-auto h-auto absolute bottom-0 pb-2"/>
+                    <Logo className="logo lg:w-auto h-auto absolute bottom-0 pb-2 left-0 right-0 lg:mx-auto mx-[50.5px] w-[-webkit-fill-available]"/>
                     {/* <DarkLogo className="darkLogo w-auto h-auto absolute bottom-0 pb-2"/> */}
                     {/* <Image className="logo w-auto h-auto absolute bottom-0 pb-2" src={Logo} height={100} width={100} alt="CULT(FAVORITE) Logo" />
                     <Image className="darkLogo w-auto h-auto absolute bottom-0 pb-2 hidden" src={DarkLogo} height={100} width={100} alt="CULT(FAVORITE) Logo" /> */}
