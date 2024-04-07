@@ -1,12 +1,12 @@
 "use client"
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import { WorksType } from "@/sanity/types";
 import { getWorkBySlug } from "@/sanity/lib/query";
 import Nav from "../components/Layout/nav";
-import NotFoundPage from "../404/page";
 import { redirect } from 'next/navigation'
 
 
@@ -33,16 +33,12 @@ export default function ProjectPage() {
     }
 
     const work = project?.projects[0];
-    
-    if(slug != work?.slug.current ) {
+
+    if (slug != work?.slug.current) {
         return (
             redirect('/404')
         )
     }
-
-
-    console.log(work)
-
 
     return (
         <>
@@ -52,7 +48,15 @@ export default function ProjectPage() {
                         <Nav />
                     </div>
 
-                    <div className="project grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative ">
+                    <motion.div className="project grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative"
+                        initial={{ opacity: 0 }}
+                        // style={{ y: 1400 }} 
+                        transition={{
+                            ease: "linear",
+                            duration: .3
+                        }}
+                        animate={{ y: 0, opacity: 1 }}
+                    >
                         <div className="titles block row-start-2">
                             {work?.projectTitle && <h3>{work.projectTitle}</h3>}
                             {work?.projectYear && <h4>{work.projectYear}</h4>}
@@ -97,7 +101,9 @@ export default function ProjectPage() {
                                 </div>
                             </>
                         )}
-                    </div>
+
+                    </motion.div>
+
                     <div className="imagesGrid mt-32 grid grid-cols-7  gap-x-5 gap-y-4 grid-flow-row">
                         {/* grid-rows-4 */}
                         {work?.thumbnail && (
