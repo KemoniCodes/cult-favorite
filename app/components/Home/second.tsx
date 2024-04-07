@@ -69,7 +69,7 @@ export default function Second() {
             </div>
             <div className="grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4 absolute bottom-0 left-0 h-screen">
                 <div className="imgContainer col-span-3 row-start-2" ref={ref} style={{
-                    transform: isInView ? "none" : "translateX(-200px)",
+                    transform: isInView ? "none" : "translateY(200px)",
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}>
@@ -77,7 +77,7 @@ export default function Second() {
                     <h5 className="pt-[.1rem]">jouir de</h5>
                 </div>
                 <div className="gifContainer col-span-2 col-start-6 row-start-2" ref={ref} style={{
-                    transform: isInView ? "none" : "translateX(200px)",
+                    transform: isInView ? "none" : "translateY(200px)",
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}>
