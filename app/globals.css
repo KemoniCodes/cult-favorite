@@ -41,11 +41,11 @@ h3,
   @apply uppercase text-[24px] leading-tight;
 }
 
-h4 {
+h4,.h4 {
   @apply uppercase text-[14px];
 }
 
-h5 {
+h5,.h5 {
   @apply uppercase text-[11px];
 }
 

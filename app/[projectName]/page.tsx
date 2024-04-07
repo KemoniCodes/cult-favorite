@@ -6,6 +6,9 @@ import { usePathname } from 'next/navigation';
 import { WorksType } from "@/sanity/types";
 import { getWorkBySlug } from "@/sanity/lib/query";
 import Nav from "../components/Layout/nav";
+import NotFoundPage from "../404/page";
+import { redirect } from 'next/navigation'
+
 
 export default function ProjectPage() {
     const router = usePathname();
@@ -30,6 +33,15 @@ export default function ProjectPage() {
     }
 
     const work = project?.projects[0];
+    
+    if(slug != work?.slug.current ) {
+        return (
+            redirect('/404')
+        )
+    }
+
+
+    console.log(work)
 
 
     return (
