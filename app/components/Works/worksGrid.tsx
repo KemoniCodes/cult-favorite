@@ -5,16 +5,26 @@ import Image from "next/image";
 import { WorksType } from "@/sanity/types";
 import { getAllWorks } from "@/sanity/lib/query";
 import Link from "next/link";
-// import { getWorksBySlug } from "@/sanity/lib/query";
-
 
 const WorksContext = React.createContext<WorksType | null>(null);
 
-
 export default function WorksGrid() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const isInView = useInView(ref, { once: false });
     const [works, setWorks] = useState<WorksType | null>(null);
+
+    useEffect(() => {
+        const worksElement = document.querySelector("#works");
+
+        if (worksElement) {
+            if (isInView) {
+                document.querySelector('.worksLink')?.classList.add('linkActive');
+            } else {
+                document.querySelector('.worksLink')?.classList.remove('linkActive');
+            }
+        }
+    })
+
 
     useEffect(() => {
         const fetchWorks = async () => {
@@ -25,12 +35,9 @@ export default function WorksGrid() {
         fetchWorks();
     }, [])
 
-    // console.log(works);
-
     return (
-        // relative top-[16rem]
         <WorksContext.Provider value={works}>
-            <div className="works grid grid-cols-7 gap-x-5 gap-y-4 mt-8 pt-2 pb-16">
+            <div className="works grid grid-cols-7 gap-x-5 gap-y-4 mt-[16rem] pt-2 pb-16" id="works">
                 <div className="titles block" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(200px)",
                     opacity: isInView ? 1 : 0,
@@ -73,7 +80,6 @@ export default function WorksGrid() {
                                         ))}
                                     </div>
                                 </Link>
-
                             </div>
                         </>
                     ))}

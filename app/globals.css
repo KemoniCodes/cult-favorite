@@ -63,6 +63,10 @@ li {
   @apply transition-yellowLinkHover hover:text-tarantinoYellow;
 }
 
+.linkActive {
+  @apply text-tarantinoYellow;
+}
+
 html.yellowMode body {
   @apply bg-tarantinoYellow;
 }

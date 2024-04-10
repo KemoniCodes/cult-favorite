@@ -38,7 +38,7 @@ export default function ServicesChart() {
     return (
         <>
             <ServicesContext.Provider value={services}>
-                <div className="services grid grid-cols-7 grid-rows-8 gap-x-5 gap-y-4 mt-8 pt-2 relative top-[16rem]" ref={ref} style={{
+                <div className="services grid grid-cols-7 gap-x-5 gap-y-4 pt-2 relative mt-[18rem]" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(200px)",
                     opacity: isInView ? 1 : 0,
                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
