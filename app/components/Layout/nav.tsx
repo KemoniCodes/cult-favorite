@@ -1,18 +1,31 @@
-import React, { use, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import YellowSmiley from '../../../public/yellowSmiley.svg'
 import BlackSmiley from '../../../public/blackSmiley.svg'
 import BlackSubmark from '../../../public/blackSubmark.svg'
 import YellowSubmark from '../../../public/yellowSubmark.svg'
 import Link from "next/link"
+import { Router } from "next/router"
+import { usePathname } from "next/navigation"
 
 
 export default function Nav() {
-    const [colorChange, setColorChange] = useState(false)
+    const [colorChange, setColorChange] = useState(false);
+    const router = usePathname();
+    const [showLink, setShowLink] = useState(true);
+
+    useEffect(() => {
+        if (router === '/') {
+            setShowLink(false);
+        } else {
+            setShowLink(true);
+        }
+    }, [router]);
 
     const handleScrollToWorks = () => {
-        const worksElement = document.querySelector(".works");
+        const worksElement = document.querySelector("#works");
         if (worksElement) {
+
             worksElement.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
@@ -80,9 +93,19 @@ export default function Nav() {
                     </div>
 
                     <div className="navInfo block">
-                        <button onClick={handleScrollToWorks}>
-                            <li >works</li>
-                        </button>
+                    <button onClick={handleScrollToWorks}>
+  {showLink ? (
+    <Link href={'/#works'} className="">
+      <li className="worksLink">
+        works
+      </li>
+    </Link>
+  ) : (
+    <li className="worksLink">
+      works
+    </li>
+  )}
+</button>
                         <li>studio</li>
                         <li>contact</li>
                     </div>
