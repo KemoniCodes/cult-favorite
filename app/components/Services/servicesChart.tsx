@@ -27,7 +27,7 @@ export default function ServicesChart() {
         for (let i = 0; i < list.length; i += 2) {
             spanList.push(
                 <span key={i}>
-                    <li className="h3 !leading-[.98]">{list[i]}</li>
+                    <li className="h3">{list[i]}</li>
                     {list[i + 1] && <li className="h3">{list[i + 1]}</li>}
                 </span>
             );

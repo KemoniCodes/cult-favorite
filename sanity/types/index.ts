@@ -41,3 +41,16 @@ export type WorksType = {
     }
   ];
 };
+
+export type AboutType = {
+  [x: string]: any;
+  _id: string;
+  aboutHeader: string;
+  aboutText: string;
+  selectedClientsHeader: string;
+  techStackHeader: string;
+  selectedClients: [string];
+  techStack: [string];
+  profileImg: string | { asset: { url: string } };
+  profileImgAlt: string;
+}

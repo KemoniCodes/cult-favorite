@@ -105,7 +105,9 @@ export default function Nav() {
                                 </li>
                             )}
                         </button>
-                        <li>studio</li>
+                        <Link href={'/about'}>
+                            <li className="studioLink">studio</li>
+                        </Link>
                         <li>contact</li>
                     </div>
                 </ul>

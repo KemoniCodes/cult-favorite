@@ -119,8 +119,8 @@ svg {
 }
 
 .services li {
-  @apply hover:cursor-default;
-}
+  @apply hover:cursor-default !leading-[1.05] pb-[.35rem];
+} 
 
 .works .list div:nth-child(4) {
   @apply flex-grow-[3];

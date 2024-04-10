@@ -10,7 +10,7 @@ export async function getServices() {
       servicesList[]
     }`
   );
-};
+}
 
 export async function getAllWorks() {
   return client.fetch(
@@ -44,7 +44,7 @@ export async function getAllWorks() {
         }
       }`
   );
-};
+}
 
 export async function getWorkBySlug(slug: string) {
   return client.fetch(
@@ -80,5 +80,22 @@ export async function getWorkBySlug(slug: string) {
   );
 }
 
-
-
+export async function getAboutData() {
+  return client.fetch(
+    groq`*[_type == "about"]{
+      _id,
+      aboutHeader,
+      aboutText,
+      selectedClientsHeader,
+      techStackHeader,
+      selectedClients[],
+      techStack[],
+      profileImg {
+        asset-> {
+          url
+        }
+      },
+      profileImgAlt
+    }`
+  );
+}

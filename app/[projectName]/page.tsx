@@ -57,11 +57,11 @@ export default function ProjectPage() {
                         }}
                         animate={{ y: 0, opacity: 1 }}
                     >
-                        <div className="titles block row-start-2">
+                        <div className="titles block row-start-2 mb-8">
                             {work?.projectTitle && <h3>{work.projectTitle}</h3>}
                             {work?.projectYear && <h4>{work.projectYear}</h4>}
                         </div>
-                        <div className="info row-start-2 col-start-3 col-span-4">
+                        <div className="info row-start-2 col-start-3 col-span-4 mb-8">
                             {work?.projectDescription && <h3>{work.projectDescription}</h3>}
                         </div>
                         {work && work.animationTech != null && work.backendTech != null && work.frontendTech != null && (
