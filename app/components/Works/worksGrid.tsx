@@ -39,17 +39,17 @@ export default function WorksGrid() {
         <WorksContext.Provider value={works}>
             <div className="works grid grid-cols-7 gap-x-5 gap-y-4 mt-[16rem] pt-2 pb-16" id="works">
                 <div className="titles block" ref={ref} style={{
-                    transform: isInView ? "none" : "translateY(200px)",
+                    transform: isInView ? "none" : "translateY(100px)",
                     opacity: isInView ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                    transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}>
                     <h3>{works?.worksHeader}</h3>
                     <h4>{works?.worksSubHeader}</h4>
                 </div>
                 <div className="list col-start-3 col-span-5 grid-cols-3 gap-x-5 gap-y-6 flex justify-between flex-wrap" ref={ref} style={{
-                    transform: isInView ? "none" : "translateY(200px)",
+                    transform: isInView ? "none" : "translateY(100px)",
                     opacity: isInView ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                    transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                 }}>
                     {works?.projects.map((project, index) => (
                         <>

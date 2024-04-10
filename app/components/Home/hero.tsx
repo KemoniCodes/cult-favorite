@@ -46,16 +46,16 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     style={{ y: -20 }}
                     transition={{
-                        ease: "easeIn",
-                        duration: .15
+                        ease: "linear",
+                        duration: .30
                     }}
                     animate={{ y: 0, opacity: 1 }} className="tagLine uppercase text-[18px] text-tarantinoYellow text-center">AN INDEPENDENT DESIGN  STUDIO FOR AUTHENTIC  BRANDS LIVING IN THE CHAOTIC GOOD.</motion.h1>
                 <motion.div
                 initial={{ opacity: 0 }}
-                // style={{ y: 1400 }} 
+                // style={{ y: 20 }} 
                 transition={{
                     ease: "linear",
-                    duration: .3
+                    duration: 1
                 }}
                 animate={{ y: 0, opacity: 1 }}
                 >

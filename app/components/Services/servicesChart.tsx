@@ -39,9 +39,9 @@ export default function ServicesChart() {
         <>
             <ServicesContext.Provider value={services}>
                 <div className="services grid grid-cols-7 gap-x-5 gap-y-4 pt-2 relative mt-[18rem]" ref={ref} style={{
-                    transform: isInView ? "none" : "translateY(200px)",
+                    transform: isInView ? "none" : "translateY(100px)",
                     opacity: isInView ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                    transition: "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
                 }}>
                     <div className="titles block">
                         <h3>{services?.servicesHeader}</h3>
