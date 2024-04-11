@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import Nav from "../components/Layout/nav";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ContactPage() {
     const [date, setDate] = useState('');
@@ -24,7 +25,7 @@ export default function ContactPage() {
     }, []);
 
     useEffect(() => {
-        setDate(formattedDate); 
+        setDate(formattedDate);
     }, [formattedDate]);
 
     useEffect(() => {
@@ -47,7 +48,7 @@ export default function ContactPage() {
                 <div className="fixed top-0 left-0 right-0 mx-[50.5px] z-50" >
                     <Nav />
                 </div>
-                <motion.h1 className="text-[200px] uppercase leading-[12rem] text-center mt-[11rem]" initial={{ opacity: 0 }}
+                <motion.h1 className="text-[200px] uppercase leading-[12rem] text-center mt-[11rem] mb-4" initial={{ opacity: 0 }}
                     // style={{ y: 1400 }} 
                     transition={{
                         ease: "linear",
@@ -68,16 +69,26 @@ export default function ContactPage() {
                     <h3>GOT A PROJECT? GIVE ME A RING(EMAIL THE STUDIO)</h3>
                     <h3>ANOTHER CREATIVE WANTING TO COLLAB? LET’S DO IT, IMMEDIATELY</h3>
                     <h3>HAVE SOME KIND WORDS? PLZ SEND</h3>
-                    <h2>HELLO@CULT-FAVORITE.COM</h2>
-                    <div className="info">
-                        <ul>
+                    <Link href={'mailto:HELLO@CULT-FAVORITE.COM'}>
+                        <h2 className=" my-16">HELLO@CULT-FAVORITE.COM</h2>
+                    </Link>
+
+                    <div className="info flex justify-center gap-16">
+                        <ul className="text-left">
                             <li className="h3">{date}</li>
                             <li className="h3">{currentTime}</li>
                         </ul>
-                        <ul>
-                            <li className="h3">instagram</li>
-                            <li className="h3">behance</li>
-                            <li className="h3">linkedin</li>
+                        <ul className="text-right">
+                            <Link href={'https://www.instagram.com/cultfavorite.studio/'} target="_blank">
+                                <li className="h3">instagram</li>
+                            </Link>
+                            <Link href={'https://www.behance.net/cultfavorite'} target="_blank">
+                                <li className="h3">behance</li>
+                            </Link>
+
+                            <Link href={'https://www.linkedin.com/company/cult-favorite'} target="_blank">
+                                <li className="h3">linkedin</li>
+                            </Link>
                         </ul>
                     </div>
                 </motion.div>
