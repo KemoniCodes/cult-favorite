@@ -85,7 +85,7 @@ export default function Second() {
                     <h5 className="pt-[.1rem] ">ceramica</h5>
                 </div>
 
-                <h2 className="text-left lg:col-span-4 col-span-7 lg:row-end-7 row-end-6" ref={ref} style={{
+                <h2 className="text-left lg:col-span-4 col-span-7 row-end-7" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(70px)",
                     opacity: isInView ? 1 : 0,
                     transition: "all .7s cubic-bezier(0.17, 0.55, 0.55, 1) 1.1s"
