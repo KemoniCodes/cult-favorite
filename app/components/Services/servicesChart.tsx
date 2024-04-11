@@ -47,8 +47,8 @@ export default function ServicesChart() {
                         <h3>{services?.servicesHeader}</h3>
                         <h4>{services?.servicesSubHeader}</h4>
                     </div>
-                    <div className="list col-start-3 col-span-4">
-                        <ul className="flex justify-between">
+                    <div className="list lg:col-start-3 col-start-4 col-span-4">
+                        <ul className="lg:flex block justify-between">
                             {services && wrapInSpan(services.servicesList)}
                         </ul>
                     </div>
