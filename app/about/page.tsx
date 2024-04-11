@@ -35,7 +35,7 @@ export default function StudioPage() {
                     <Nav />
                 </div>
 
-                <motion.div className="grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative mt-[11rem]"
+                <motion.div className="block lg:grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative mt-[10rem]"
                     initial={{ opacity: 0 }}
                     // style={{ y: 1400 }} 
                     transition={{
@@ -44,26 +44,26 @@ export default function StudioPage() {
                     }}
                     animate={{ y: 0, opacity: 1 }}
                 >
-                    <div className="titles block row-start-1">
+                    <div className="titles block row-start-1 lg:mb-0 mb-2">
                         {aboutData?.aboutHeader && <h3>{aboutData.aboutHeader}</h3>}
-                        {/* {work?.projectYear && <h4>{work.projectYear}</h4>} */}
                     </div>
-                    <div className="info row-start-1 lg:col-start-3 col-start-4 col-span-4 mb-8">
+                    <div className="info row-start-1 lg:col-start-3 col-start-4 col-span-4 lg:mb-8 mb-12">
                         {aboutData?.aboutText && <h3 className="whitespace-pre-wrap">{aboutData.aboutText}</h3>}
                     </div>
-                    <div className="titles block row-start-2">
+                    <div className="titles block row-start-2 lg:mb-0 mb-2">
                         {aboutData?.selectedClientsHeader && <h3>{aboutData.selectedClientsHeader}</h3>}
                     </div>
-                    <div className="info row-start-2 lg:col-start-3 col-start-4 col-span-4 flex justify-between">
+                    <div className="info row-start-2 lg:col-start-3 col-start-4 col-span-4 flex justify-between lg:mb-0 mb-12">
                         <ul className="">
                             {aboutData?.selectedClients && aboutData.selectedClients.map((client, index) => <li className="h3" key={index}>{client}</li>)}
                         </ul>
                     </div>
-                    <div className="titles block row-start-3 lg:-mt-[9rem] -mt-[55rem]">
+                    <div className="titles block row-start-3 lg:-mt-[9rem]
+                    -mt-0 lg:mb-0 mb-2">
                         {aboutData?.techStackHeader && <h3>{aboutData.techStackHeader}</h3>}
                     </div>
                     <div className="info row-start-3 lg:-mt-[9rem]
-                    -mt-[55rem] lg:col-start-3 col-start-4 col-span-4 flex justify-between">
+                    -mt-0 lg:col-start-3 col-start-4 col-span-4 flex justify-between">
                         <ul className="">
                             {aboutData?.techStack && aboutData.techStack.map((tech, index) => <li className="h3" key={index}>{tech}</li>)}
                         </ul>
