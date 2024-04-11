@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import Nav from "../components/Layout/nav";
 import { motion } from "framer-motion";
@@ -15,15 +15,19 @@ export default function ContactPage() {
         }
     }, [router])
 
-    useEffect(() => {
+    const formattedDate = useMemo(() => {
         const today = new Date();
         const month = today.toLocaleString('default', { month: 'long' });
-        const year = today.getFullYear();
         const day = today.toLocaleString('default', { weekday: 'long' });
         const dayNumber = today.getDate();
-        const currentDate = day + ',' + ' ' + month + ' ' + dayNumber
-        setDate(currentDate);
+        return `${day}, ${month} ${dayNumber}`;
+    }, []);
 
+    useEffect(() => {
+        setDate(formattedDate); 
+    }, [formattedDate]);
+
+    useEffect(() => {
         const interval = setInterval(() => {
             const today = new Date();
             const hour = today.getHours();
@@ -31,15 +35,12 @@ export default function ContactPage() {
             const second = today.getSeconds();
             const ampm = hour >= 12 ? 'pm' : 'am';
             const formattedHour = hour % 12 || 12;
-            const time = formattedHour + ':' + (minute < 10 ? '0' + minute : minute) + ' ' + ampm;
-            setCurrentTime(time)
-            console.log(date)
-            console.log(currentTime)
+            const time = `${formattedHour}:${minute < 10 ? '0' + minute : minute} ${ampm}`;
+            setCurrentTime(time);
         }, 1000);
 
         return () => clearInterval(interval);
-
-    }, [date, currentTime])
+    }, [])
     return (
         <>
             <div className="contactPageContainer pb-16 w-max m-auto">
