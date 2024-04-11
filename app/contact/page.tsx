@@ -53,7 +53,7 @@ export default function ContactPage() {
                         duration: .3
                     }}
                     animate={{ y: 0, opacity: 1 }}>
-                    let's chat
+                    let&apos;s chat
                 </motion.h1>
                 <motion.div className="about pt-2 relative text-center "
                     initial={{ opacity: 0 }}
