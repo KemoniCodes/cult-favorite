@@ -122,7 +122,6 @@ export default function ProjectPage() {
                         )}
 
                         {work?.images && work.images.map((img, index) => (
-                            console.log(img),
                             <Image
                                 key={index}
                                 src={`${img}`}

@@ -20,8 +20,6 @@ export default function ServicesChart() {
         fetchServices();
     }, []);
 
-    // console.log(services)
-
     const wrapInSpan = (list: string[]) => {
         const spanList: JSX.Element[] = [];
         for (let i = 0; i < list.length; i += 2) {

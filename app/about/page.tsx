@@ -21,8 +21,6 @@ export default function StudioPage() {
         fetchAboutData();
     }, [])
 
-    console.log(aboutData);
-
     useEffect(() => {
         if (router) {
             document.querySelector('.studioLink')?.classList.add('linkActive')
