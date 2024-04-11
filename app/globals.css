@@ -29,12 +29,15 @@ html {
 }
 
 body {
-  @apply ml-[50.5px] mr-[50.5px] mt-2 bg-offBlack font-light text-blancheWhite;
+  @apply lg:mx-[50.5px] mx-[25.5px] mt-2 bg-offBlack font-light text-blancheWhite;
 }
 
 h2 {
-  @apply uppercase text-[75px] leading-[73px];
+  @apply uppercase lg:text-[75px] lg:leading-[73px] text-[3rem] leading-[3.5rem];
 }
+/* font-size: 3rem;
+text-transform: uppercase;
+line-height: 3.5rem; */
 
 h3,
 .h3 {
@@ -54,9 +57,8 @@ nav li {
 }
 
 .fixed-nav {
-  @apply fixed top-0 z-50 px-[50.5px] right-0 left-0 block;
+  @apply fixed top-0 z-50 lg:px-[50.5px] px-[25.5px] right-0 left-0 block lg:w-auto w-screen;
 }
-/* mt-4 */
 
 a,
 li {
