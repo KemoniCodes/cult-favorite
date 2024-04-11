@@ -108,7 +108,9 @@ export default function Nav() {
                         <Link href={'/about'}>
                             <li className="studioLink">studio</li>
                         </Link>
-                        <li>contact</li>
+                        <Link href={'/contact'}>
+                            <li className="contactLink">contact</li>
+                        </Link>
                     </div>
                 </ul>
             </nav>

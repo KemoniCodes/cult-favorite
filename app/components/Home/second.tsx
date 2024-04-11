@@ -71,7 +71,7 @@ export default function Second() {
                 <div className="imgContainer col-span-3 row-start-2" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(70px)",
                     opacity: isInView ? 1 : 0,
-                    transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) .5s"
+                    transition: "all .7s cubic-bezier(0.17, 0.55, 0.55, 1) .5s"
                 }}>
                     <Image className="w-full" src={Img1} height={353} width={561} alt="image 1" />
                     <h5 className="pt-[.1rem]">jouir de</h5>
@@ -79,7 +79,7 @@ export default function Second() {
                 <div className="gifContainer col-span-2 col-start-6 row-start-2" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(70px)",
                     opacity: isInView ? 1 : 0,
-                    transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) .8s"
+                    transition: "all .7s cubic-bezier(0.17, 0.55, 0.55, 1) .8s"
                 }}>
                     <Image className="w-full" src={Gif1} height={520} width={368} alt="gif 1" />
                     <h5 className="pt-[.1rem] ">ceramica</h5>
@@ -88,7 +88,7 @@ export default function Second() {
                 <h2 className="text-left col-span-4 row-end-7" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(70px)",
                     opacity: isInView ? 1 : 0,
-                    transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) 1.1s"
+                    transition: "all .7s cubic-bezier(0.17, 0.55, 0.55, 1) 1.1s"
                 }}>
                     LOS ANGELES－BASED DESIGNER & CREATIVE DEVELOPER.
                 </h2>

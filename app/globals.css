@@ -67,6 +67,10 @@ li {
   @apply text-tarantinoYellow;
 }
 
+html.yellowMode .linkActive {
+  @apply text-blancheWhite;
+}
+
 html.yellowMode body {
   @apply bg-tarantinoYellow;
 }
@@ -76,6 +80,14 @@ html.yellowMode .homePageContainer > * {
 }
 
 html.yellowMode .projectPageContainer > * {
+  @apply !text-offBlack;
+}
+
+html.yellowMode .aboutPageContainer > * {
+  @apply !text-offBlack;
+}
+
+html.yellowMode .contactPageContainer > * {
   @apply !text-offBlack;
 }
 

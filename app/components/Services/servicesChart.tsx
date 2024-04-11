@@ -41,7 +41,7 @@ export default function ServicesChart() {
                 <div className="services grid grid-cols-7 gap-x-5 gap-y-4 pt-2 relative mt-[18rem]" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(100px)",
                     opacity: isInView ? 1 : 0,
-                    transition: "all .9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
+                    transition: "all .7s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s"
                 }}>
                     <div className="titles block">
                         <h3>{services?.servicesHeader}</h3>
