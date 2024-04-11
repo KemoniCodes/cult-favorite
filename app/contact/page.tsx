@@ -42,7 +42,7 @@ export default function ContactPage() {
     }, [date, currentTime])
     return (
         <>
-            <div className="aboutPageContainer pb-16 w-max m-auto">
+            <div className="contactPageContainer pb-16 w-max m-auto">
                 <div className="fixed top-0 left-0 right-0 mx-[50.5px] z-50" >
                     <Nav />
                 </div>

@@ -83,7 +83,7 @@ html.yellowMode .projectPageContainer > * {
   @apply !text-offBlack;
 }
 
-html.yellowMode .aboutPageContainer > * {
+html.yellowMode .studioPageContainer > * {
   @apply !text-offBlack;
 }
 
