@@ -76,7 +76,7 @@ export default function Second() {
                     <Image className="w-full" src={Img1} height={353} width={561} alt="image 1" />
                     <h5 className="pt-[.1rem]">jouir de</h5>
                 </div>
-                <div className="gifContainer lg:col-span-2 col-span-7  col-start-6 lg:row-start-2 row-start-3" ref={ref} style={{
+                <div className="gifContainer lg:col-span-2 col-span-7  lg:col-start-6 col-start-5 lg:row-start-2 row-start-3" ref={ref} style={{
                     transform: isInView ? "none" : "translateY(70px)",
                     opacity: isInView ? 1 : 0,
                     transition: "all .7s cubic-bezier(0.17, 0.55, 0.55, 1) .8s"
