@@ -143,3 +143,19 @@ svg {
 .works .list div:nth-child(4) {
   @apply flex-grow-[3];
 }
+
+.projectPageContainer .imagesGrid img:nth-child(2) {
+  @apply col-start-5;
+}
+
+.projectPageContainer .imagesGrid img:nth-child(6) {
+  @apply col-start-5;
+}
+
+.projectPageContainer .imagesGrid img:nth-child(10) {
+  @apply col-start-5;
+}
+
+.projectPageContainer .imagesGrid img:nth-child(14) {
+  @apply col-start-5;
+}

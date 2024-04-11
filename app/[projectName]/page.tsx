@@ -128,7 +128,8 @@ export default function ProjectPage() {
                                 height={373}
                                 width={362}
                                 alt={`${work.imageAlts && work.imageAlts[index] ? work.imageAlts[index] : 'Default Alt Text'}`}
-                                className="h-fit w-full col-span-3 last:col-span-3 last:col-start-5 lg:mb-0 mb-4"
+                                className="h-fit w-full col-span-3 lg:mb-0 mb-4 "
+                                // last:col-span-3 last:col-start-5
                             />
                         ))}
                     </div>
