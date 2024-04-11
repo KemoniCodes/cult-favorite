@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Nav from "../components/Layout/nav";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Footer from "../components/Layout/footer";
 
 export default function ContactPage() {
     const [date, setDate] = useState('');
@@ -94,6 +95,7 @@ export default function ContactPage() {
                     </div>
                 </motion.div>
             </div>
+            <Footer/>
         </>
     )
 }

@@ -8,6 +8,7 @@ import { WorksType } from "@/sanity/types";
 import { getWorkBySlug } from "@/sanity/lib/query";
 import Nav from "../components/Layout/nav";
 import { redirect } from 'next/navigation'
+import Footer from "../components/Layout/footer";
 
 
 export default function ProjectPage() {
@@ -108,7 +109,7 @@ export default function ProjectPage() {
 
                     </motion.div>
 
-                    <div className="imagesGrid mt-32 lg:grid block grid-cols-7 gap-x-5 gap-y-4 grid-flow-row">
+                    <div className="imagesGrid mt-32 lg:grid block grid-cols-7 gap-x-5 gap-y-4 grid-flow-row pb-32">
                         {/* grid-rows-4 */}
                         {work?.thumbnail && (
                             <Image
@@ -134,6 +135,7 @@ export default function ProjectPage() {
                     </div>
                 </div>
             )}
+            <Footer />
         </>
     );
 }

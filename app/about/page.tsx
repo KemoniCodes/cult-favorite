@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { AboutType } from "@/sanity/types";
 import { getAboutData } from "@/sanity/lib/query";
+import Footer from "../components/Layout/footer";
 
 const AboutContext = React.createContext<AboutType | null>(null);
 
@@ -70,6 +71,7 @@ export default function StudioPage() {
                     </div>
                 </motion.div>
             </div>
+            <Footer/>
         </>
     )
 }

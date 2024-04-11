@@ -3,6 +3,7 @@ import Hero from './hero'
 import Second from './second'
 import Services from '../Services'
 import Works from '../Works'
+import Footer from '../Layout/footer'
 
 export default function Home() {
     if (!Hero && !Second && !Services && !Works) {
@@ -16,6 +17,7 @@ export default function Home() {
             <Second />
             <Services />
             <Works/>
+            <Footer/>
         </>
     )
 }
