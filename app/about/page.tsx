@@ -31,7 +31,7 @@ export default function StudioPage() {
     return (
         <>
             <div className="studioPageContainer pb-16">
-                <div className="fixed top-0 left-0 right-0 mx-[50.5px] z-50" >
+                <div className="fixed z-50 top-0 lg:px-[50.5px] px-[25.5px] right-0 left-0 block lg:w-auto w-screen" >
                     <Nav />
                 </div>
 
@@ -48,21 +48,22 @@ export default function StudioPage() {
                         {aboutData?.aboutHeader && <h3>{aboutData.aboutHeader}</h3>}
                         {/* {work?.projectYear && <h4>{work.projectYear}</h4>} */}
                     </div>
-                    <div className="info row-start-1 col-start-3 col-span-4 mb-8">
+                    <div className="info row-start-1 lg:col-start-3 col-start-4 col-span-4 mb-8">
                         {aboutData?.aboutText && <h3 className="whitespace-pre-wrap">{aboutData.aboutText}</h3>}
                     </div>
                     <div className="titles block row-start-2">
                         {aboutData?.selectedClientsHeader && <h3>{aboutData.selectedClientsHeader}</h3>}
                     </div>
-                    <div className="info row-start-2 col-start-3 col-span-4 flex justify-between">
+                    <div className="info row-start-2 lg:col-start-3 col-start-4 col-span-4 flex justify-between">
                         <ul className="">
                             {aboutData?.selectedClients && aboutData.selectedClients.map((client, index) => <li className="h3" key={index}>{client}</li>)}
                         </ul>
                     </div>
-                    <div className="titles block row-start-3 -mt-[9rem]">
+                    <div className="titles block row-start-3 lg:-mt-[9rem] -mt-[55rem]">
                         {aboutData?.techStackHeader && <h3>{aboutData.techStackHeader}</h3>}
                     </div>
-                    <div className="info row-start-3 -mt-[9rem] col-start-3 col-span-4 flex justify-between">
+                    <div className="info row-start-3 lg:-mt-[9rem]
+                    -mt-[55rem] lg:col-start-3 col-start-4 col-span-4 flex justify-between">
                         <ul className="">
                             {aboutData?.techStack && aboutData.techStack.map((tech, index) => <li className="h3" key={index}>{tech}</li>)}
                         </ul>
