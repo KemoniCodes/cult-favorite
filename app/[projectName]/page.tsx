@@ -43,12 +43,12 @@ export default function ProjectPage() {
     return (
         <>
             {project && (
-                <div className="projectPageContainer pb-16 relative lg:top-auto top-48">
+                <div className="projectPageContainer pb-16">
                     <div className="fixed z-50 top-0 lg:px-[50.5px] px-[25.5px] right-0 left-0 block lg:w-auto w-screen" >
                         <Nav />
                     </div>
 
-                    <motion.div className="project block lg:grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative"
+                    <motion.div className="project grid grid-cols-7 grid-rows-4 gap-x-5 gap-y-4 pt-2 relative lg:-mt-0 -mt-[15rem]"
                         initial={{ opacity: 0 }}
                         // style={{ y: 1400 }} 
                         transition={{
@@ -57,20 +57,20 @@ export default function ProjectPage() {
                         }}
                         animate={{ y: 0, opacity: 1 }}
                     >
-                        <div className="titles block row-start-2 lg:mb-8 mb-4">
+                        <div className="titles block row-start-2 mb-8">
                             {work?.projectTitle && <h3>{work.projectTitle}</h3>}
                             {work?.projectYear && <h4>{work.projectYear}</h4>}
                         </div>
-                        <div className="info row-start-2 lg:col-start-3 col-start-4 col-span-4 lg:mb-8 mb-12">
+                        <div className="info row-start-2 lg:col-start-3 col-start-4 col-span-4 mb-8">
                             {work?.projectDescription && <h3>{work.projectDescription}</h3>}
                         </div>
                         {work && work.animationTech != null && work.backendTech != null && work.frontendTech != null && (
                             <>
-                                <div className="titles block row-start-3 lg:mb-0 mb-2">
+                                <div className="titles block row-start-3">
                                     {project?.techTitle && <h3>{project.techTitle}</h3>}
                                 </div>
                                 <div className="info row-start-3 lg:col-start-3 
-                                col-start-4 col-span-4 flex lg:flex-row flex-col lg:justify-between justify-start lg:gap-0 gap-4 lg:mb-0 mb-12">
+                                col-start-4 col-span-4 flex lg:flex-row flex-col lg:justify-between justify-start lg:gap-0 gap-4">
                                 
                           <ul className="">
                                         {project?.frontendTechTitle && <li className="h3">{project.frontendTechTitle}:</li>}
@@ -87,16 +87,16 @@ export default function ProjectPage() {
                                 </div>
                             </>
                         )}
-                        <div className={`titles block lg:mb-0 mb-2 ${work?.animationTech == null && work?.backendTech == null && work?.frontendTech == null ? 'row-start-3' : 'row-start-4'}`} >
+                        <div className={`titles block ${work?.animationTech == null && work?.backendTech == null && work?.frontendTech == null ? 'row-start-3' : 'row-start-4'}`}>
                             <h3>{project?.deliverablesTechTitle && project.deliverablesTechTitle}</h3>
                         </div>
                         <div className={`info lg:col-start-3 
-                                col-start-5 col-span-4 lg:mb-0 mb-12  ${work?.animationTech == null && work?.backendTech == null && work?.frontendTech == null ? 'row-start-3' : 'row-start-4'}`}>
+                                col-start-5 col-span-4 ${work?.animationTech == null && work?.backendTech == null && work?.frontendTech == null ? 'row-start-3' : 'row-start-4'}`}>
                             {work?.deliverables && work.deliverables.map((d, index) => <li className="h3 list-none" key={index}>{d}</li>)}
                         </div>
                         {work && work.projectWebsite != null && (
                             <>
-                                <div className="titles block row-start-5 lg:mb-0 mb-2">
+                                <div className="titles block row-start-5">
                                     <h3>website</h3>
                                 </div>
                                 <div className="info row-start-5 lg:col-start-3 
