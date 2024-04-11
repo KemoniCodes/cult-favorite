@@ -25,7 +25,7 @@ export default function ProjectPage() {
             }
         };
         fetchProject();
-    }, [slug, project]);
+    }, [slug]);
 
     if (!project) {
         return (
