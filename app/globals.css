@@ -93,6 +93,10 @@ html.yellowMode .contactPageContainer > * {
   @apply !text-offBlack;
 }
 
+html.yellowMode .footerContainer > * {
+  @apply !text-offBlack;
+}
+
 html.yellowMode .heroContainer h1 {
   @apply !text-offBlack font-normal;
 }
