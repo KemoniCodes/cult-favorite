@@ -44,11 +44,12 @@ export default function ContactPage() {
     }, [])
     return (
         <>
-            <div className="contactPageContainer pb-16 w-max m-auto">
-                <div className="fixed top-0 left-0 right-0 mx-[50.5px] z-50" >
+            <div className="contactPageContainer pb-16 lg:w-max w-full m-auto">
+                <div className="fixed z-50 top-0 lg:px-[50.5px] px-[25.5px] right-0 left-0 block lg:w-auto w-screen">
                     <Nav />
                 </div>
-                <motion.h1 className="text-[200px] uppercase leading-[12rem] text-center mt-[11rem] mb-4" initial={{ opacity: 0 }}
+                <motion.h1 className="lg:text-[200px] 
+                text-[130px] uppercase lg:leading-[12rem] leading-[7.5rem] text-center mt-[11rem] lg:mb-4 mb-8" initial={{ opacity: 0 }}
                     // style={{ y: 1400 }} 
                     transition={{
                         ease: "linear",
@@ -66,9 +67,9 @@ export default function ContactPage() {
                     }}
                     animate={{ y: 0, opacity: 1 }}
                 >
-                    <h3>GOT A PROJECT? GIVE ME A RING(EMAIL THE STUDIO)</h3>
-                    <h3>ANOTHER CREATIVE WANTING TO COLLAB? LET’S DO IT, IMMEDIATELY</h3>
-                    <h3>HAVE SOME KIND WORDS? PLZ SEND</h3>
+                    <h3 className="lg:mb-0 mb-2">GOT A PROJECT? GIVE ME A RING(EMAIL THE STUDIO)</h3>
+                    <h3 className="lg:mb-0 mb-2">ANOTHER CREATIVE WANTING TO COLLAB? LET’S DO IT, IMMEDIATELY</h3>
+                    <h3 className="lg:mb-0 mb-2">HAVE SOME KIND WORDS? PLZ SEND</h3>
                     <Link href={'mailto:HELLO@CULT-FAVORITE.COM'}>
                         <h2 className=" my-16">HELLO@CULT-FAVORITE.COM</h2>
                     </Link>
