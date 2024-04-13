@@ -66,7 +66,7 @@ export default function Form() {
                 </div>
 
                 <div className="lg:flex block flex-col pb-16 lg:w-1/2 w-full">
-                    <label htmlFor='findUs' className="h3 text-left pb-2 lg:float-none float-left">how'd you hear about the studio?</label>
+                    <label htmlFor='findUs' className="h3 text-left pb-2 lg:float-none float-left">how&apos;d you hear about the studio?</label>
                     <select name="findUs" id="findUs" className="h3 lg:w-auto w-full lg:mt-0 mt-4">
                         <option value="instagram">instagram</option>
                         <option value="refferal">referral</option>
