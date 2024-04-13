@@ -159,3 +159,15 @@ svg {
 .projectPageContainer .imagesGrid img:nth-child(14) {
   @apply col-start-5;
 }
+
+input, textarea {
+  @apply text-blancheWhite !bg-transparent border-b-[1px] border-b-blancheWhite !outline-none;
+}
+
+input:-internal-autofill-selected {
+  @apply text-blancheWhite !bg-transparent border-b-[1px] border-b-blancheWhite !outline-none;
+}
+
+select {
+@apply border-[1px] border-blancheWhite !bg-transparent p-1 !outline-none;
+}
