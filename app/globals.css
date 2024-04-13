@@ -44,11 +44,13 @@ h3,
   @apply uppercase text-[24px] leading-tight;
 }
 
-h4,.h4 {
+h4,
+.h4 {
   @apply uppercase text-[14px];
 }
 
-h5,.h5 {
+h5,
+.h5 {
   @apply uppercase text-[11px];
 }
 
@@ -91,6 +93,17 @@ html.yellowMode .studioPageContainer > * {
 
 html.yellowMode .contactPageContainer > * {
   @apply !text-offBlack;
+}
+
+html.yellowMode .contactPageContainer form input,
+html.yellowMode .contactPageContainer form textarea,
+html.yellowMode .contactPageContainer form select,
+html.yellowMode .contactPageContainer form button {
+  @apply text-offBlack border-b-offBlack border-offBlack;
+}
+
+html.yellowMode .contactPageContainer form button {
+  @apply hover:!bg-offBlack hover:!text-blancheWhite;
 }
 
 html.yellowMode .footerContainer > * {
@@ -138,7 +151,7 @@ svg {
 
 .services li {
   @apply hover:cursor-default !leading-[1.05] pb-[.35rem];
-} 
+}
 
 .works .list div:nth-child(4) {
   @apply flex-grow-[3];
@@ -160,7 +173,8 @@ svg {
   @apply col-start-5;
 }
 
-input, textarea {
+input,
+textarea {
   @apply text-blancheWhite !bg-transparent border-b-[1px] border-b-blancheWhite !outline-none;
 }
 
@@ -169,5 +183,17 @@ input:-internal-autofill-selected {
 }
 
 select {
-@apply border-[1px] border-blancheWhite !bg-transparent p-1 !outline-none;
+  @apply border-[1px] border-blancheWhite !bg-transparent p-1 !outline-none;
+}
+
+.inputError {
+  @apply border-b-[1px] !border-b-red-600;
+}
+
+.selectError {
+  @apply border-[1px] !border-red-600 !text-red-600;
+}
+
+.labelError {
+  @apply !text-red-600;
 }
