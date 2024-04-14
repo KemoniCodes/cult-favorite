@@ -156,7 +156,7 @@ export default function Form() {
                 </div>
                 <div className="lg:flex block gap-24 justify-between pb-8">
                     <div className="flex flex-col w-full lg:pb-0 pb-[2.5rem]">
-                        <label htmlFor='business_name' className="h3 text-left pb-2">business name</label>
+                        <label htmlFor='business_name' className="h3 text-left pb-2">business name(if applicable)</label>
                         <input type="text" name="business_name" />
                     </div>
                     <div className="flex flex-col w-full lg:pb-0 pb-[2.5rem]">
