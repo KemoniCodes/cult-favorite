@@ -162,7 +162,7 @@ export default function Form() {
                     <div className="flex flex-col w-full lg:pb-0 pb-[2.5rem]">
                         <label htmlFor='budget' className={submitButtonClicked && budgetInput === '' ? 'labelError h3 text-left pb-2' : 'h3 text-left pb-2'}
                         >budget*</label>
-                        <select required name="budget" id="budget"
+                        <select aria-required required name="budget" id="budget"
                             value={budgetInput}
                             onChange={handleInputChange}
                             className={
