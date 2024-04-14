@@ -173,6 +173,7 @@ export default function Form() {
                                         : 'h3'
                             }
                         >
+                            <option value="">Select Budget</option>
                             <option value="<10K">&lt;10k</option>
                             <option value=">10K">&gt;10k</option>
                         </select>
