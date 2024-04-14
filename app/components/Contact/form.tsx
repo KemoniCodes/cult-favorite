@@ -63,7 +63,9 @@ export default function Form() {
         if (fullNameInput === '' || emailInput === '' || servicesInput === '' || budgetInput === '') {
             setValidForm(false);
             setFormSubmitted(false);
+            document.querySelector('.submitButton')?.classList.add('cursor-not-allowed')
         } else {
+            document.querySelector('.submitButton')?.classList.remove('cursor-not-allowed')
             setValidForm(true);
             setFormSubmitted(true);
             setShowSuccessMessage(true);
@@ -84,11 +86,6 @@ export default function Form() {
                     setEmailInput('');
                     setBudgetInput('');
                     setServicesInput('');
-
-                    // Remove error classes after resetting the form
-
-
-
                 }, 3000);
                 formRef?.current?.classList.add('hidden');
             }
@@ -127,7 +124,7 @@ export default function Form() {
                     <div className="flex flex-col w-full lg:pb-0 pb-[2.5rem]">
                         <label htmlFor='full_name'
                             className={submitButtonClicked && fullNameInput === '' ? 'labelError h3 text-left pb-2' : 'h3 text-left pb-2'}>full name*</label>
-                        <input type="text" name="full_name" id="full_name"
+                        <input required type="text" name="full_name" id="full_name"
                             value={fullNameInput}
                             onChange={handleInputChange}
                             className={
@@ -144,7 +141,7 @@ export default function Form() {
                             email*
                         </label>
                         {submitButtonClicked && !validEmail && emailInput != '' && <h4 className="text-right text-red-600">enter valid email</h4>}
-                        <input id="email" type="email" name="email"
+                        <input required id="email" type="email" name="email"
                             value={emailInput}
                             onChange={handleInputChange}
                             className={
@@ -165,7 +162,7 @@ export default function Form() {
                     <div className="flex flex-col w-full lg:pb-0 pb-[2.5rem]">
                         <label htmlFor='budget' className={submitButtonClicked && budgetInput === '' ? 'labelError h3 text-left pb-2' : 'h3 text-left pb-2'}
                         >budget*</label>
-                        <select name="budget" id="budget"
+                        <select required name="budget" id="budget"
                             value={budgetInput}
                             onChange={handleInputChange}
                             className={
@@ -197,7 +194,7 @@ export default function Form() {
                     <label htmlFor='services' className=
                         {submitButtonClicked && servicesInput === '' ? 'labelError h3 text-left pb-2' : 'h3 text-left pb-2'}
                     >what do you need help with?*</label>
-                    <textarea id="services" name="services" className={
+                    <textarea required id="services" name="services" className={
                         submitButtonClicked && servicesInput === ''
                             ? 'inputError h3'
                             : formSubmitted && validForm && servicesInput === ''
@@ -210,7 +207,7 @@ export default function Form() {
                 </div>
                 <div className="flex">
                     <button type="submit" onClick={handleButtonClick}
-                        className="h3 hover:!text-offBlack bg-transparent border-[1.5px] border-blancheWhite text-blancheWhite py-[.8rem] px-8 button hover:bg-tarantinoYellow hover:border-tarantinoYellow hover:rounded-[.8rem] mt-8 duration-200 ease-in-out">Submit
+                        className="submitButton h3 hover:!text-offBlack bg-transparent border-[1.5px] border-blancheWhite text-blancheWhite py-[.8rem] px-8 button hover:bg-tarantinoYellow hover:border-tarantinoYellow hover:rounded-[.8rem] mt-8 duration-200 ease-in-out">Submit
                     </button>
                 </div>
             </form>
