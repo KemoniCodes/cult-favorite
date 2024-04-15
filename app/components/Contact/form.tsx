@@ -39,7 +39,7 @@ export default function Form() {
         };
         try {
             const response = await fetch(form.action, requestOptions);
-            if (response.status === 200) {
+            if (response.status === 302) {
                 // setFormSubmitted(true);
                 // setValidForm(true);
                 console.log('valid', validForm);
@@ -118,7 +118,8 @@ export default function Form() {
                 <h3 className="successMessage pt-16">Form submitted successfully!</h3>
             )}
 
-            <form action="https://postend.vercel.app/n/gAAAAABmHHkm1WbjDTqiKrSoqk48fn1bngMdgFes0EyUqcZssguMbg2djm95R1Z9AnNRz6345NxfVM9TIo73U7HVztdagVZiKymZgIKdgwE1Z5928h8AlmDhuPIUjXOwusNnqFeoErCIIucrN5qZtcazc0y1vLVGBZhRsPbdX4gVAE_8QplCBYCDJ5cv37cSWWgle9kJCZ4B" method="POST" onSubmit={handleSubmit} ref={formRef} className="w-[80%] m-auto mt-24 clientInquiryForm">
+            <form action="https://getform.io/f/pbgxjnja" method="POST" 
+onSubmit={handleSubmit} ref={formRef} className="w-[80%] m-auto mt-24 clientInquiryForm">
 
                 <div className="lg:flex block gap-24 justify-between lg:pb-8 pb-0">
                     <div className="flex flex-col w-full lg:pb-0 pb-[2.5rem]">
