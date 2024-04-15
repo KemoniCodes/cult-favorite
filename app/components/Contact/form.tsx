@@ -6,7 +6,7 @@ export default function Form() {
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [validForm, setValidForm] = useState(false)
     const [validEmail, setValidEmail] = useState(true)
-    const [fullNameInput, setfullNameInput] = useState('')
+    const [firstNameInput, setfirstNameInput] = useState('')
     const [emailInput, setEmailInput] = useState('')
     const [budgetInput, setBudgetInput] = useState('')
     const [servicesInput, setServicesInput] = useState('')
@@ -14,7 +14,7 @@ export default function Form() {
 
     const handleInputChange = (e: any) => {
         const { name, value } = e.target;
-        if (name === 'full_name') setfullNameInput(value);
+        if (name === 'first_name') setfirstNameInput(value);
         else if (name === 'email') setEmailInput(value);
         else if (name === 'budget') setBudgetInput(value);
         else if (name === 'services') setServicesInput(value);
@@ -60,7 +60,7 @@ export default function Form() {
 
     const handleButtonClick = () => {
         setSubmitButtonClicked(true);
-        if (fullNameInput === '' || emailInput === '' || servicesInput === '' || budgetInput === '') {
+        if (firstNameInput === '' || emailInput === '' || servicesInput === '' || budgetInput === '') {
             setValidForm(false);
             setFormSubmitted(false);
             document.querySelector('.submitButton')?.classList.add('cursor-not-allowed')
@@ -74,7 +74,7 @@ export default function Form() {
 
     useEffect(() => {
         if (validForm && formSubmitted) {
-            if (fullNameInput === '' || emailInput === '' || servicesInput === '' || budgetInput === '') {
+            if (firstNameInput === '' || emailInput === '' || servicesInput === '' || budgetInput === '') {
                 setValidForm(false);
                 setFormSubmitted(false);
             } else {
@@ -82,7 +82,7 @@ export default function Form() {
                     setFormSubmitted(false);
                     formRef?.current?.classList.remove('hidden');
                     formRef?.current?.reset();
-                    setfullNameInput('');
+                    setfirstNameInput('');
                     setEmailInput('');
                     setBudgetInput('');
                     setServicesInput('');
@@ -123,15 +123,15 @@ onSubmit={handleSubmit} ref={formRef} className="w-[80%] m-auto mt-24 clientInqu
 
                 <div className="lg:flex block gap-24 justify-between lg:pb-8 pb-0">
                     <div className="flex flex-col w-full lg:pb-0 pb-[2.5rem]">
-                        <label htmlFor='full_name'
-                            className={submitButtonClicked && fullNameInput === '' ? 'labelError h3 text-left pb-2' : 'h3 text-left pb-2'}>full name*</label>
-                        <input required type="text" name="full_name" id="full_name"
-                            value={fullNameInput}
+                        <label htmlFor='first_name'
+                            className={submitButtonClicked && firstNameInput === '' ? 'labelError h3 text-left pb-2' : 'h3 text-left pb-2'}>first name*</label>
+                        <input required type="text" name="first_name" id="first_name"
+                            value={firstNameInput}
                             onChange={handleInputChange}
                             className={
-                                submitButtonClicked && fullNameInput === ''
+                                submitButtonClicked && firstNameInput === ''
                                     ? 'inputError'
-                                    : formSubmitted && validForm && fullNameInput === ''
+                                    : formSubmitted && validForm && firstNameInput === ''
                                         ? ''
                                         : ''
                             }
