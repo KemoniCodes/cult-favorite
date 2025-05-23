@@ -118,7 +118,7 @@ export default function Form() {
                 <h3 className="successMessage pt-16">Form submitted successfully!</h3>
             )}
 
-            <form action="https://getform.io/f/pbgxjnja" method="POST" 
+            <form action="https://getform.io/f/aronogmb" method="POST" 
 onSubmit={handleSubmit} ref={formRef} className="w-[80%] m-auto mt-24 clientInquiryForm">
 
                 <div className="lg:flex block gap-24 justify-between lg:pb-8 pb-0">
