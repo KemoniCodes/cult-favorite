@@ -23,8 +23,8 @@ export default function Footer() {
                                 <li className="h3 !text-[18px]">behance</li>
                             </Link>
 
-                            <Link href={'https://www.linkedin.com/company/cult-favorite'} target="_blank">
-                                <li className="h3 !text-[18px]">linkedin</li>
+                            <Link href={'https://www.tiktok.com/@cultfavoritestudio'} target="_blank">
+                                <li className="h3 !text-[18px]">tiktok</li>
                             </Link>
                         </ul>
                     </ul>
